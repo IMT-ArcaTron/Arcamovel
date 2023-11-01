@@ -43,18 +43,31 @@
 
 # 💻 Software
 ### Instale o sistema operacional `Raspibian` utilizando o `Raspberry Pi Imager` em um cartão microSD e insira no Raspberry Pi.
-### Transfira a pasta `Softawares` desse repositório para `/home/` do Raspberry e siga o tutorial de instalação.
+### Transfira a pasta `Softwares` desse repositório para `/home/` do Raspberry e siga o tutorial de instalação.
+
+</br>
+ 
+ --- 
+## `Softwares/can2mqtt/can2mqtt.js`
+### Script em Nodejs para envio de mensagens can via MQTT
 
 </br>
 
-## `Softwares/can2mqtt/can2mqtt.js`
-### Script em Nodejs para envio de mensagens can via MQTT
 ## `Softwares/can2mqtt/mqtt2can.js`
-### Script em Nodejs para recepção de mensagens MQTT
+### Script em Nodejs para recepção de mensagens MQTT e acionar o buzzer
+
+</br>
+
 ## `Softwares/systemd/can0_verifier.sh`
 ### Script em bash que verifica a interface CAN do Raspberry e a inicia caso necessário
+
+</br>
+
 ## `Softwares/systemd/can2mqtt_prcs_up.sh`
 ### Script em bash que inicia os demais scripts automaticamente
+
+</br>
+
 ## `Softwares/systemd/can2mqtt_prcs_up.service`
 ### Script em bash que chama o script acima ao ser atribuido como service no sistema operacional
 
@@ -67,7 +80,9 @@
 
 </br>
 
+--- 
 ## Trasferir a pasta `Softwares` para o Raspberry em `/home/` 
+--- 
 </br>
 
 ## Instalação Nodejs no Raspberry
@@ -77,7 +92,7 @@
 
 </br>
 
-### Instalar o `yarn` as bibliotecas `socketcan` e `mqtt`
+### Instalar o `yarn` as bibliotecas `socketcan`, `mqtt` e `onoff`
 ```bash
 npm install --global yarn
 ```
@@ -85,6 +100,7 @@ npm install --global yarn
 ```bash
 npm install socketcan
 npm install mqtt
+npm install onoff
 ```
 
 </br>
@@ -114,7 +130,7 @@ sudo systemctl enable mosquitto.service
 ``` bash
 sudo npm install -g --unsafe-perm node-red
 ```
-### E importe o flow presente na pasta `Node-Red`desse repositório.
+### E importe o flow presente na pasta `Node-Red` desse repositório.
 
 </br>
 
