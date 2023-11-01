@@ -168,7 +168,7 @@ sudo crontab -e
 ### - Ahmad Mahfoud 20.01323-0
 ### - Lucas Romanato 20.00313-7
 
-<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/bbc919af-d9ff-4f0e-9a7b-b1713f23ffca" width="600">
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/5ac782be-5b1b-4ada-8107-a05bf3348955" width="600">
 
 </br>
 </br>
