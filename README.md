@@ -34,20 +34,29 @@
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/063a5019-3d86-4049-abad-3f6ae5769890" width="600">
 
 </br>
+
+## Modificação de Hardware
+### Para poder utilizar o módulo MCP2515 com o Raspberry Pi é necessário fazer modificações na alimentação. Siga o tutorial apresentado em: https://forums.raspberrypi.com/viewtopic.php?t=141052
+
+</br>
 </br>
 
 # 💻 Software
-### O Sistema operacional `RetroPie` foi instalado utilizando o `Raspberry Pi Imager`:
+### Instale o sistema operacional `Raspibian` utilizando o `Raspberry Pi Imager` em um cartão microSD e insira no Raspberry Pi.
+### Transfira a pasta `Softawares` desse repositório para `/home/` do Raspberry e siga o tutorial de instalação.
 
-<img src="media/image4.png" width="600">
+</br>
 
-### Onde em `Operating Systems` deve ser escolhido `'Emulation and game OS'>'RetroPie'>'RetroPie 4.8(RPI 2/3/Zero 2 W)'`. E em `Storage` deve-se selecionar o cartão MicroSD onde o sistema operacional deve ser instalado.
-
-### E seguindo a documentação do sistema operacional presente em: https://retropie.org.uk/ 
-
-### Para inserir jogos no fliperama suas `ROMS` são baixadas no computador e transferidas para o pendrive , seguindo a documentação do sistema operacional: https://retropie.org.uk/docs/Transferring-Roms/
-
-> Devemos salientar a importância de adquirir ROMs de maneira legal. Compre jogos em plataformas oficiais, verifique a legalidade das ROMs e, se possível, crie ROMs a partir de cópias físicas
+## `Softwares/can2mqtt/can2mqtt.js`
+### Script em Nodejs para envio de mensagens can via MQTT
+## `Softwares/can2mqtt/mqtt2can.js`
+### Script em Nodejs para recepção de mensagens MQTT
+## `Softwares/systemd/can0_verifier.sh`
+### Script em bash que verifica a interface CAN do Raspberry e a inicia caso necessário
+## `Softwares/systemd/can2mqtt_prcs_up.sh`
+### Script em bash que inicia os demais scripts automaticamente
+## `Softwares/systemd/can2mqtt_prcs_up.service`
+### Script em bash que chama o script acima ao ser atribuido como service no sistema operacional
 
 </br>
 </br>
@@ -58,12 +67,25 @@
 
 </br>
 
+## Trasferir a pasta `Softwares` para o Raspberry em `/home/` 
+</br>
+
 ## Instalação Nodejs no Raspberry
-### AQUI
+### A partir de https://nodejs.org/en/download/ é necessário realizar o download dos arquivos  binários para cada sistema operacional/arquitetura. 
+### Em sistemas Linux após o download dos arquivos é necessário descompactá-lo para uma pasta de instalação. Depois de descompactado é necessário apontar o caminho da pasta bin no PATH e recarregar a seção do terminal.
+### Siga o tutorial presente em: https://www.hackster.io/kamaluddinkhan/installing-nodejs-on-a-raspberry-pi-in-easy-steps-62d455
 
 </br>
 
-### Instalar as bibliotecas `socketcan` e `mqtt`
+### Instalar o `yarn` as bibliotecas `socketcan` e `mqtt`
+```bash
+npm install --global yarn
+```
+### Na pasta `Softwares` digitar:
+```bash
+npm install socketcan
+npm install mqtt
+```
 
 </br>
 
@@ -77,12 +99,22 @@ sudo apt-get install can-utils
 </br>
 
 ## Instalação Mosquitto
-### AQUI
+### MQTT (Message Queue Telemetry Transport) é um protocolo de comunicação desenvolvido para ser leve, simples e de fácil implementação. Composto de publishers (responsáveis por enviar dados), subscribers (responsáveis por receber os dados) e broker (responsável por gerenciar o tráfego de mensagens, é o servidor MQTT). Mosquitto Broker é um software compatível com distribuições Debian do Linux (encotrado no Raspberry Pi) que cria um broker no dispositivo, permitindo que tal se comunique via MQTT. Para instalar o Mosquitto Broker em um sistema Linux digita-se no terminal:
+```bash
+sudo apt-get install mosquito
+```
+### Para habilitar o serviço desde a inicialização do sistema operacional digita-se:
+```bash
+sudo systemctl enable mosquitto.service
+```
 
 </br>
 
 ## Instalação Node-Red
-### AQUI
+``` bash
+sudo npm install -g --unsafe-perm node-red
+```
+### E importe o flow presente na pasta `Node-Red`desse repositório.
 
 </br>
 
