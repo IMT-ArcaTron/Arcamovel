@@ -1,0 +1,39 @@
+#!/bin/sh
+
+echo "[$(date)] Starting can2mqtt process..."
+
+case "$1" in
+start)
+  # Verifies can0 network
+  if  grep 'down' /sys/class/net/can0/operstate; then
+    echo "CAN0 Network DOWN"
+    sudo ifconfig can0 txqueuelen 1000 && sudo ip link set can0 up type can bitrate 500000
+  fi
+  # Delay
+  sleep 2
+
+  echo "[$(date)] Starting Nodejs scripts"
+  # Delay to let interfaces start
+  sleep 10
+  # Start can2mqtt_can0.js
+  # node /home/pi/Softwares/can2mqtt/can2mqtt_can0.js 1> /dev/null
+  
+  ;;
+
+stop)
+  echo "[$(date)] Stopped can2mqtt processes"
+  # Kill all node processes
+  killall node
+  # Shutdown can-0 interface
+  sudo ip link set can-0 down
+  # Delay
+  sleep 2
+  ;;
+
+*)
+  echo "Usage: ./can2_mqtt_prcs_up.sh {start|stop}"
+  exit 1
+  ;;
+esac
+
+exit 0

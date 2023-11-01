@@ -1,0 +1,276 @@
+[
+    {
+        "id": "47fba637.a6d6b8",
+        "type": "mqtt in",
+        "z": "b8705a35fc56965b",
+        "name": "",
+        "topic": "microcontroladores/cano/01",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "3f30164e.dcfb5a",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 220,
+        "y": 440,
+        "wires": [
+            [
+                "9595a5a4.c9bdd8"
+            ]
+        ]
+    },
+    {
+        "id": "9595a5a4.c9bdd8",
+        "type": "function",
+        "z": "b8705a35fc56965b",
+        "name": "",
+        "func": "const lastCanMessage = JSON.parse(msg.payload);\n\nif (global.get(\"showLastCanMessages\")) {\n    \n    global.set(\"showLastCanMessages\",[lastCanMessage, ...global.get(\"showLastCanMessages\").slice(0,19)]);\n    msg.payload = global.get(\"showLastCanMessages\");\n    \n} else {\n    \n    global.set(\"showLastCanMessages\",[])\n    \n}\n\n\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 440,
+        "wires": [
+            [
+                "65fdc480.ac5fbc"
+            ]
+        ]
+    },
+    {
+        "id": "aefebef9.72aa3",
+        "type": "comment",
+        "z": "b8705a35fc56965b",
+        "name": "MQTT 2 CAN",
+        "info": "",
+        "x": 130,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "18f1c76.c6a6439",
+        "type": "comment",
+        "z": "b8705a35fc56965b",
+        "name": "CAN 2 MQTT",
+        "info": "",
+        "x": 130,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1ba8156a.98189b",
+        "type": "mqtt out",
+        "z": "b8705a35fc56965b",
+        "name": "",
+        "topic": "microcontroladores/cano/02",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3f30164e.dcfb5a",
+        "x": 780,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c1253ba9.9d0248",
+        "type": "ui_template",
+        "z": "b8705a35fc56965b",
+        "d": true,
+        "group": "5fd15936.599728",
+        "name": "MQTT 2 CAN",
+        "order": 1,
+        "width": "12",
+        "height": "5",
+        "format": "<h3>CAN Send</h3>\n\n<p>Id:   <input type=\"text\" ng-model=\"canId\"></p>\n<p>Data: <input type=\"text\" ng-model=\"canData\"></p>\n<div>\n    <md-button ng-click=\"send({payload: {id: canId, data: canData}})\">\n    Send CAN Frame!\n    </md-button>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "1ba8156a.98189b"
+            ]
+        ]
+    },
+    {
+        "id": "65fdc480.ac5fbc",
+        "type": "ui_template",
+        "z": "b8705a35fc56965b",
+        "group": "5fd15936.599728",
+        "name": "CAN 2 MQTT",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "format": "<!DOCTYPE html>\n<html>\n    <body>\n        <p>timestamp: {{msg.payload[0].tsSec}}.{{msg.payload[0].tsUsec}}, id: {{msg.payload[0].id}}, data: {{msg.payload[0].data.data}}  </p>\n        <p>timestamp: {{msg.payload[1].tsSec}}.{{msg.payload[1].tsUsec}}, id: {{msg.payload[1].id}}, data: {{msg.payload[1].data.data}}  </p>\n        <p>timestamp: {{msg.payload[2].tsSec}}.{{msg.payload[2].tsUsec}}, id: {{msg.payload[2].id}}, data: {{msg.payload[2].data.data}}  </p>\n        <p>timestamp: {{msg.payload[3].tsSec}}.{{msg.payload[3].tsUsec}}, id: {{msg.payload[3].id}}, data: {{msg.payload[3].data.data}}  </p>\n        <p>timestamp: {{msg.payload[4].tsSec}}.{{msg.payload[4].tsUsec}}, id: {{msg.payload[4].id}}, data: {{msg.payload[4].data.data}}  </p>\n        <p>timestamp: {{msg.payload[5].tsSec}}.{{msg.payload[5].tsUsec}}, id: {{msg.payload[5].id}}, data: {{msg.payload[5].data.data}}  </p>\n        <p>timestamp: {{msg.payload[6].tsSec}}.{{msg.payload[6].tsUsec}}, id: {{msg.payload[6].id}}, data: {{msg.payload[6].data.data}}  </p>\n        <p>timestamp: {{msg.payload[7].tsSec}}.{{msg.payload[7].tsUsec}}, id: {{msg.payload[7].id}}, data: {{msg.payload[7].data.data}}  </p>\n        <p>timestamp: {{msg.payload[8].tsSec}}.{{msg.payload[8].tsUsec}}, id: {{msg.payload[8].id}}, data: {{msg.payload[8].data.data}}  </p>\n        <p>timestamp: {{msg.payload[9].tsSec}}.{{msg.payload[9].tsUsec}}, id: {{msg.payload[9].id}}, data: {{msg.payload[9].data.data}}  </p>\n        <p>timestamp: {{msg.payload[10].tsSec}}.{{msg.payload[10].tsUsec}}, id: {{msg.payload[10].id}}, data: {{msg.payload[10].data.data}}  </p>\n        <p>timestamp: {{msg.payload[11].tsSec}}.{{msg.payload[11].tsUsec}}, id: {{msg.payload[11].id}}, data: {{msg.payload[11].data.data}}  </p>\n        <p>timestamp: {{msg.payload[12].tsSec}}.{{msg.payload[12].tsUsec}}, id: {{msg.payload[12].id}}, data: {{msg.payload[12].data.data}}  </p>\n        <p>timestamp: {{msg.payload[13].tsSec}}.{{msg.payload[13].tsUsec}}, id: {{msg.payload[13].id}}, data: {{msg.payload[13].data.data}}  </p>\n        <p>timestamp: {{msg.payload[14].tsSec}}.{{msg.payload[14].tsUsec}}, id: {{msg.payload[14].id}}, data: {{msg.payload[14].data.data}}  </p>\n        <p>timestamp: {{msg.payload[15].tsSec}}.{{msg.payload[15].tsUsec}}, id: {{msg.payload[15].id}}, data: {{msg.payload[15].data.data}}  </p>\n        <p>timestamp: {{msg.payload[16].tsSec}}.{{msg.payload[16].tsUsec}}, id: {{msg.payload[16].id}}, data: {{msg.payload[16].data.data}}  </p>\n        <p>timestamp: {{msg.payload[17].tsSec}}.{{msg.payload[17].tsUsec}}, id: {{msg.payload[17].id}}, data: {{msg.payload[17].data.data}}  </p>\n        <p>timestamp: {{msg.payload[18].tsSec}}.{{msg.payload[18].tsUsec}}, id: {{msg.payload[18].id}}, data: {{msg.payload[18].data.data}}  </p>\n        <p>timestamp: {{msg.payload[19].tsSec}}.{{msg.payload[19].tsUsec}}, id: {{msg.payload[19].id}}, data: {{msg.payload[19].data.data}}  </p>\n    </body>\n</html>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 720,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "33860065.a9599",
+        "type": "function",
+        "z": "b8705a35fc56965b",
+        "d": true,
+        "name": "Operation Sequence",
+        "func": "var mode = msg.payload;\n\nif (mode == \"StartCharging\"){\n    global.set(\"state\",\"Starting Charging Process...\");\n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '00000000'}})//Standby\n    }, 1000);//1s\n    \n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '00010000'}})//Selecao G2V\n    }, 11000);//1s+10s\n    \n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '01010000'}})//Inicializa G2V\n    global.set(\"state\",\"Charging\");\n    }, 21000);//1s+10s+10s\n}\n\n\nif (mode == \"StopCharging\"){\n    global.set(\"state\",\"Stopping Charging Process...\");\n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '01010000'}})\n    }, 1000);//1s\n    \n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '00010000'}})\n    }, 11000);//1s+10s\n    \n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '00000000'}})\n        global.set(\"state\",\"Charging Stopped\");\n    }, 21000);//1s+10s+10s\n}\n\nif (mode == \"StartDischarging\"){\n    global.set(\"state\",\"Starting Discharging Process...\");\n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '00000000'}})\n    }, 1000);//1s\n    \n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '00020000'}})\n    }, 11000);//1s+10s\n    \n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '01020000'}})\n        global.set(\"state\",\"Discharging\");\n    }, 21000);//1s+10s+10s\n}\n\nif (mode == \"StopDischarging\"){\n    global.set(\"state\",\"Stopping Discharging Process...\");\n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '01020000'}})\n    }, 1000);//1s\n    \n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '00020000'}})\n    }, 11000);//1s+10s\n    \n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '00000000'}})\n        global.set(\"state\",\"Discharging Stopped\");\n    }, 21000);//1s+10s+10s\n}\n\nif (mode == \"StandbyMode\"){\n    setTimeout(function(){\n        node.send({payload:{id: '257', data: '00000000'}})\n        global.set(\"state\",\"On Standby\");\n    }, 1000);//1s\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "1ba8156a.98189b"
+            ]
+        ]
+    },
+    {
+        "id": "572a062.820aff8",
+        "type": "ui_template",
+        "z": "b8705a35fc56965b",
+        "d": true,
+        "group": "5fd15936.599728",
+        "name": "Button Commands",
+        "order": 1,
+        "width": "12",
+        "height": "11",
+        "format": "<style>\n    .md-button {\n    height: 35px;\n    }\n</style>\n\n\n<body>\n\n\n<h3>Operation Mode</h3>\n\n    \n\n    <md-button id=\"StartCharging\" ng-click=\"send({payload:StartCharging()})\">\n    Start Charging            \n    </md-button>\n\n    <md-button id=\"StopCharging\" ng-click=\"send({payload:StopCharging()})\">\n    Stop Charging            \n    </md-button>\n\n<br>\n\n    <md-button id=\"StartDischarging\" ng-click=\"send({payload:StartDischarging()})\">\n    Start Discharging            \n    </md-button>\n\n\n    <md-button id=\"StopDischarging\" ng-click=\"send({payload:StopDischarging()})\">\n    Stop Discharging            \n    </md-button>\n\n<br>\n\n    <md-button id=\"StandbyMode\" ng-click=\"send({payload:StandbyMode()})\">\n    Standby Mode            \n    </md-button>\n\n<script>\n\nthis.scope.StartCharging = function() { \n    document.getElementById(\"StartCharging\").disabled = true;\n    document.getElementById(\"StopCharging\").disabled = false;\n    document.getElementById(\"StartDischarging\").disabled = true;\n    document.getElementById(\"StopDischarging\").disabled = true;\n    document.getElementById(\"StandbyMode\").disabled = true;\n    return(\"StartCharging\");\n}\n\nthis.scope.StopCharging = function() { \n    document.getElementById(\"StartCharging\").disabled = false;\n    document.getElementById(\"StopCharging\").disabled = true;\n    document.getElementById(\"StartDischarging\").disabled = false;\n    document.getElementById(\"StopDischarging\").disabled = true;\n    document.getElementById(\"StandbyMode\").disabled = false;\n    return(\"StopCharging\");\n}\n\nthis.scope.StartDischarging = function() { \n    document.getElementById(\"StartCharging\").disabled = true;\n    document.getElementById(\"StopCharging\").disabled = true;\n    document.getElementById(\"StartDischarging\").disabled = true;\n    document.getElementById(\"StopDischarging\").disabled = false;\n    document.getElementById(\"StandbyMode\").disabled = true;\n    return(\"StartDischarging\");\n}\n\nthis.scope.StopDischarging = function() { \n    document.getElementById(\"StartCharging\").disabled = false;\n    document.getElementById(\"StopCharging\").disabled = true;\n    document.getElementById(\"StartDischarging\").disabled = false;\n    document.getElementById(\"StopDischarging\").disabled = true;\n    document.getElementById(\"StandbyMode\").disabled = false;\n    return(\"StopDischarging\");\n}\n\nthis.scope.StandbyMode = function() { \n    document.getElementById(\"StartCharging\").disabled = false;\n    document.getElementById(\"StopCharging\").disabled = true;\n    document.getElementById(\"StartDischarging\").disabled = false;\n    document.getElementById(\"StopDischarging\").disabled = true;\n    document.getElementById(\"StandbyMode\").disabled = false;\n    return(\"StandbyMode\");\n}\n\n\n\n</script>\n \n\n    \n</body>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "33860065.a9599"
+            ]
+        ]
+    },
+    {
+        "id": "50a72436.1abaac",
+        "type": "comment",
+        "z": "b8705a35fc56965b",
+        "name": "Operation Mode Buttons",
+        "info": "",
+        "x": 210,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a4403f582feb10d4",
+        "type": "ui_button",
+        "z": "b8705a35fc56965b",
+        "name": "",
+        "group": "b13cd3049673f7bb",
+        "order": 13,
+        "width": "4",
+        "height": "4",
+        "passthru": false,
+        "label": "Buzzer",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"msg\":true}",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 540,
+        "y": 260,
+        "wires": [
+            [
+                "1ba8156a.98189b",
+                "e400419a77a68e90"
+            ]
+        ]
+    },
+    {
+        "id": "e400419a77a68e90",
+        "type": "debug",
+        "z": "b8705a35fc56965b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "3f30164e.dcfb5a",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "smartcampus.maua.br",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5fd15936.599728",
+        "type": "ui_group",
+        "z": "b8705a35fc56965b",
+        "name": "CAN 2 MQTT",
+        "tab": "03b4578300e55456",
+        "order": 1,
+        "disp": true,
+        "width": "25",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b13cd3049673f7bb",
+        "type": "ui_group",
+        "name": "MQTT 2 CAN",
+        "tab": "03b4578300e55456",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "03b4578300e55456",
+        "type": "ui_tab",
+        "name": "Microcontroladores",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

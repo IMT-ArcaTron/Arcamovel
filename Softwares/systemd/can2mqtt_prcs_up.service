@@ -1,0 +1,14 @@
+[Unit]
+Description=CAN interfaces and MQTT send
+#After=syslog.target network.target
+After=default.target
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/bin/sudo /home/pi/Softwares/systemd/can2mqtt_prcs_up.sh start
+
+# log output to syslog as 'can2mqtt-prcs-up'
+SyslogIdentifier=can2mqtt-prcs-up
+
+[Install]
+WantedBy=multi-user.target
