@@ -1,35 +1,36 @@
 # 🚗 Arcamovel
-### Este projeto consiste na criação de um pequeno dispositivo conectado a rede CAN do automóvel para monitoramento. Esse projeto baseia-se em um Raspberry Pi 3B+ rodando o sistema operacional RaspBian.
+### Este projeto consiste na criação de um pequeno dispositivo conectado a rede CAN do automóvel para monitoramento. Esse projeto baseia-se em um Raspberry Pi 3B+ rodando o sistema operacional *Open Source* baseado em Linux Raspibian.
 
 </br>
 
 # 📝 Descrição de Hardware
 ### - Fonte 5V 3A MicroUSB
-<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/09bb2a68-60df-4943-bd08-bb8dee0fd849" width="200">
+<img src="media/fonte-para-raspberry-pi-3-com-micro-usb-5v-3a-e-esp32.jpg" width="200">
 
 ### - Inversor 
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/17c767f2-7dd2-4bdb-81eb-d5eb0705438b" width = "200">
 
 ### - Cartão MicroSD (mínimo 8GB de armazenamento)
-<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/d7e1b267-4998-4e55-be46-7065d5484964" width="200">
+<img src="media/image-1.png" width="200">
 
 ### - Raspberry Pi 3B+
-<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/6fb0f4de-55f8-43cc-8c8e-a6b2aa84ceac" width="400">
-<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/ccc507ec-920a-4609-900f-c62d903e83bb" width="400">
+<img src="media/WhatsApp Image 2023-08-30 at 16.56.59 (1).jpeg" width="400">
+<img src="media/WhatsApp Image 2023-08-30 at 16.56.59.jpeg" width="400">
+<img src="media/WhatsApp Image 2023-08-30 at 16.57.01 (2).jpeg" width="400">
+<img src="media/WhatsApp Image 2023-08-30 at 16.57.01.jpeg" width="400">
+<img src="media/WhatsApp Image 2023-08-30 at 16.57.01 (3).jpeg" width="400">
 
 ### - 7" Touchscreen Display
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/36d9807a-602b-48e9-aae9-b005830e48b2" width = "200">
 
-### - Modulo CAN
-<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/cbe7248c-b938-4fc3-bfa7-6625402b7f1f" width="200">
 
-### - Buzzer
+### - Monitor HDMI
+<img src="media/WhatsApp Image 2023-08-30 at 16.57.03 (4).jpeg" width="400">
 
 </br>
 
 ## Montagem
-<img src="" width="600">
-<img src="" width="400">
+<img src="media/image3.png" width="600">
 
 </br>
 </br>
@@ -49,6 +50,44 @@
 
 </br>
 </br>
+
+# 💻 Instalação
+## Instalação Nodejs no Raspberry
+### AQUI
+
+</br>
+
+### Instalar as bibliotecas `socketcan` e `mqtt`
+
+</br>
+
+## Instalação can-utils
+### AQUI
+
+</br>
+
+## Instalação Mosquitto
+### AQUI
+
+</br>
+
+## Instalação Node-Red
+### AQUI
+
+</br>
+
+## Configuração Crontab
+### O crontab cria uma escala de execução de scripts, digite:
+```bash
+sudo crontab -e
+```
+### E no final do arquivo adicione:
+```bash
+# To start CAN verification and reconnection uncomment sleep10 sleep30 and sleep50
+* * * * * ( sleep 10 ; /home/pi/Softwares/systemd/can0_verifier.sh )
+* * * * * ( sleep 30 ; /home/pi/Softwares/systemd/can0_verifier.sh )
+* * * * * ( sleep 50 ; /home/pi/Softwares/systemd/can0_verifier.sh )
+```
 
 # 📺 Funcionamento
 <video src="media/WhatsApp Video 2023-08-30 at 16.57.04 (1).mp4" controls title="Title"></video>
