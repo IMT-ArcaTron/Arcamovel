@@ -5,32 +5,33 @@
 
 # 📝 Descrição de Hardware
 ### - Fonte 5V 3A MicroUSB
-<img src="media/fonte-para-raspberry-pi-3-com-micro-usb-5v-3a-e-esp32.jpg" width="200">
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/09bb2a68-60df-4943-bd08-bb8dee0fd849" width="200">
 
 ### - Inversor 
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/17c767f2-7dd2-4bdb-81eb-d5eb0705438b" width = "200">
 
 ### - Cartão MicroSD (mínimo 8GB de armazenamento)
-<img src="media/image-1.png" width="200">
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/d7e1b267-4998-4e55-be46-7065d5484964" width="200">
 
 ### - Raspberry Pi 3B+
-<img src="media/WhatsApp Image 2023-08-30 at 16.56.59 (1).jpeg" width="400">
-<img src="media/WhatsApp Image 2023-08-30 at 16.56.59.jpeg" width="400">
-<img src="media/WhatsApp Image 2023-08-30 at 16.57.01 (2).jpeg" width="400">
-<img src="media/WhatsApp Image 2023-08-30 at 16.57.01.jpeg" width="400">
-<img src="media/WhatsApp Image 2023-08-30 at 16.57.01 (3).jpeg" width="400">
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/6fb0f4de-55f8-43cc-8c8e-a6b2aa84ceac" width="400">
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/ccc507ec-920a-4609-900f-c62d903e83bb" width="400">
 
 ### - 7" Touchscreen Display
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/36d9807a-602b-48e9-aae9-b005830e48b2" width = "200">
 
+### - Modulo CAN
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/cbe7248c-b938-4fc3-bfa7-6625402b7f1f" width="200">
 
-### - Monitor HDMI
-<img src="media/WhatsApp Image 2023-08-30 at 16.57.03 (4).jpeg" width="400">
+### - Buzzer
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/e4566ffd-778a-4daa-8a8e-6b04e1ce839d" width="200">
 
 </br>
 
 ## Montagem
-<img src="media/image3.png" width="600">
+
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/6f74c7fa-c792-40a7-b165-5676b6ee1999" width="600">
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/063a5019-3d86-4049-abad-3f6ae5769890" width="600">
 
 </br>
 </br>
