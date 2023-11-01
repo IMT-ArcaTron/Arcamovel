@@ -17,9 +17,6 @@
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/6fb0f4de-55f8-43cc-8c8e-a6b2aa84ceac" width="400">
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/ccc507ec-920a-4609-900f-c62d903e83bb" width="400">
 
-### - 7" Touchscreen Display
-<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/36d9807a-602b-48e9-aae9-b005830e48b2" width = "200">
-
 ### - Modulo CAN
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/cbe7248c-b938-4fc3-bfa7-6625402b7f1f" width="200">
 
@@ -32,6 +29,11 @@
 
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/6f74c7fa-c792-40a7-b165-5676b6ee1999" width="600">
 <img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/063a5019-3d86-4049-abad-3f6ae5769890" width="600">
+
+</br>
+
+## Diagrama elétrico
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/599f19ae-4e9d-4613-9505-d6b3c1928707" width="600">
 
 </br>
 
@@ -148,16 +150,13 @@ sudo crontab -e
 ```
 
 # 📺 Funcionamento
-<video src="media/WhatsApp Video 2023-08-30 at 16.57.04 (1).mp4" controls title="Title"></video>
+<video src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/03de75dc-80d3-423e-b52c-b256e8fe1256" controls title="Title"></video>
 
-https://github.com/IMT-ArcaTron/ArcaPie/assets/85368158/a2113165-8992-4f2c-bddf-1cfa6e5a0402
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/930e1314-d261-4fd7-aa4b-6f24f93c77f5" width="600">
 
-
-
-<video src="media/WhatsApp%20Video%202023-08-30%20at%2016.57.04.mp4" controls title="Title"></video>
-
-https://github.com/IMT-ArcaTron/ArcaPie/assets/85368158/ea72f841-384c-4f70-81be-b28cfd3738a9
-
+### Veiculo Utilizado
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/56f03131-adcc-4419-bbde-ae3e5b2b64e6" width="600">
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/085dce8e-ef75-48b6-b2e5-48fb182ba327" width="600">
 
 
 </br>
@@ -169,7 +168,7 @@ https://github.com/IMT-ArcaTron/ArcaPie/assets/85368158/ea72f841-384c-4f70-81be-
 ### - Ahmad Mahfoud 20.01323-0
 ### - Lucas Romanato 20.00313-7
 
-<img src="media/WhatsApp Image 2023-08-30 at 17.26.19.jpeg" width="600">
+<img src="https://github.com/IMT-ArcaTron/Arcamovel/assets/100366691/bbc919af-d9ff-4f0e-9a7b-b1713f23ffca" width="600">
 
 </br>
 </br>
