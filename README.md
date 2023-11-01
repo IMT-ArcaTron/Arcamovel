@@ -53,6 +53,11 @@
 </br>
 
 # 💻 Instalação
+## Config File
+### Substitua o arquivo `/boot/config.txt` do raspberry pi pelo presente na pasta `boot` desse repositório
+
+</br>
+
 ## Instalação Nodejs no Raspberry
 ### AQUI
 
@@ -63,7 +68,11 @@
 </br>
 
 ## Instalação can-utils
-### AQUI
+### O can-utils é um pacote de ferramentas específico para Linux que permite um computador com  esse sistema operacional se comunicar com redes CAN.
+### Para instalar:
+```bash
+sudo apt-get install can-utils
+```
 
 </br>
 
